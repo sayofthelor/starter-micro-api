@@ -1,7 +1,7 @@
 import http from 'http';
 import { ChatGPTAPI } from 'chatgpt';
 
-const port = 80;
+const port = 443;
 const gpt = new ChatGPTAPI({
     apiKey: process.env.OPENAIKEY
 });
