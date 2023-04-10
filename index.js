@@ -14,7 +14,7 @@ const server = http.createServer(async (req, res) => {
         console.log(response);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
-        res.end(response.text);
+        res.end(response);
     });
 });
 
