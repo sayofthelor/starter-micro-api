@@ -7,13 +7,13 @@ const gpt = new ChatGPTAPI({
 });
 
 const server = http.createServer(async (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Content-Type', 'application/json');
     req.on('data', async (data) => {
         const message = data.toString();
         console.log(message);
         const response = await gpt.sendMessage(message);
         console.log(response);
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader('Content-Type', 'application/json');
         res.end(JSON.stringify(response));
     });
 });
